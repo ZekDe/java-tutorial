@@ -23,10 +23,8 @@ public class NumberUtil
             x /= 10;
             ++cnt;
         }
-        if(cnt == 1)
-            return true;
 
-        return false;
+        return cnt == 1;
     }
 
     public static int calculateDigitRoot(int x)
@@ -37,15 +35,33 @@ public class NumberUtil
         return x;
     }
 
-    public static int factorial(int ival)
+    public static int factorial(int x)
     {
         int retval = 1;
 
-        for(int i = 1; i <= ival; ++i) {
+        if(x == 0)
+            return 1;
+
+        for(int i = 1; i <= x; ++i) {
             retval *= i;
         }
 
         return retval;
+    }
+
+    public static boolean isFactorian(int x)
+    {
+        int sum = 0;
+        int _x = x;
+        if(x == 0)
+            return false;
+
+        while(_x != 0) {
+            sum += factorial(_x % 10);
+            _x /= 10;
+        }
+
+        return sum == x;
     }
 
     public static boolean isPrime(long val)
@@ -66,14 +82,16 @@ public class NumberUtil
         return true;
     }
 
+
     public static boolean isPrimeX(int x)
     {
         boolean flag = true;
 
         while(!isOneDigit(x)){
-
-            if(!isPrime(x))
+            if (!isPrime(x)) {
                 flag = false;
+                break;
+            }
 
             x = sumDigits(x);
         }
@@ -98,6 +116,19 @@ public class NumberUtil
                 }
             }
         }
+    }
+
+    public static void printPrimeFactors(int x)
+    {
+        int _x = x;
+        for(int i = 2; i < x; ++i) {
+            if(isPrime(i) && (_x % i == 0)){
+                _x /= i;
+                System.out.printf("%d ", i);
+                --i;
+            }
+        }
+        System.out.println();
     }
 
     public static int getNumberReverse(int x)
