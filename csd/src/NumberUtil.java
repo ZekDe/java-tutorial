@@ -82,6 +82,18 @@ public class NumberUtil
         return true;
     }
 
+    public static long getPrime(long n)
+    {
+        int cnt = 0;
+        long i = 2;
+
+        for(; cnt < n; ++i){
+            if(isPrime(i))
+                ++cnt;
+        }
+        return i - 1;
+    }
+
 
     public static boolean isPrimeX(int x)
     {
@@ -179,5 +191,31 @@ public class NumberUtil
 
 
         return flag1 && flag2 && flag3 && flag4 && flag5 && flag6 && flag7;
+    }
+
+    public static int nextClosestFibonacci(int val)
+    {
+        if(val < 0)
+            return 0;
+        int prev1 = 1, prev2 = 0, next;
+        while(true) {
+            next = prev1 + prev2;
+            if(val < next)
+                return next;
+            prev2 = prev1;
+            prev1 = next;
+        }
+    }
+    public static int fibonacciNumber(int n)
+    {
+        if(n <= 2)
+            return n - 1;
+        int prev1 = 1, prev2 = 0, val = prev1 + prev2;
+        for(int i = 3; i < n; ++i){
+            prev2 = prev1;
+            prev1 = val;
+            val = prev1 + prev2;
+        }
+        return val;
     }
 }
