@@ -1,5 +1,4 @@
-public class NumberUtil
-{
+public class NumberUtil {
     public static int sumDigits(int x)
     {
         int sum = 0;
@@ -121,22 +120,20 @@ public class NumberUtil
             return;
         }
 
-        for(int i = 2; i < x; ++i) {
-            for(int j = 2; j < i; ++j) {
-                if(isPrime(j) && isPrime(i) && (i+j == x)) {
-                    System.out.printf("%d + %d = %d%n", j, i, i+j);
-                }
+        for(int a = 2; a <= x - 1; ++a){
+            int b = x - a;
+            if(isPrime(a) && isPrime(b) && a <= b){
+                System.out.printf("%d + %d = %d%n" , a, b, a + b);
             }
         }
     }
 
     public static void printPrimeFactors(int x)
     {
-        int _x = x;
-        for(int i = 2; i < x; ++i) {
-            if(isPrime(i) && (_x % i == 0)){
-                _x /= i;
+        for(int i=2;x!=1;i++) {
+            if(x%i==0) {
                 System.out.printf("%d ", i);
+                x /= i;
                 --i;
             }
         }
@@ -201,6 +198,19 @@ public class NumberUtil
         while(true) {
             next = prev1 + prev2;
             if(val < next)
+                return next;
+            prev2 = prev1;
+            prev1 = next;
+        }
+    }
+    public static int nextClosestPrimeFibonacci(int val)
+    {
+        if(val < 0)
+            return 0;
+        int prev1 = 1, prev2 = 0, next;
+        while(true) {
+            next = prev1 + prev2;
+            if(val < next && isPrime(next))
                 return next;
             prev2 = prev1;
             prev1 = next;

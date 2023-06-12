@@ -5,12 +5,12 @@ public class Test {
         java.util.Scanner kb = new java.util.Scanner(System.in);
         System.out.print("enter an integer for diamon: ");
         int ival = kb.nextInt();
-        Draw.printDiamond(ival);
+        Diamond.printDiamond(ival);
 
         System.out.println("Homework-002, Soru 2: ");
         System.out.print("enter ms for date-time: ");
         long ms = kb.nextInt();
-        Draw.printDuration(ms);
+        PrintSomething.printDuration(ms);
 
         System.out.println("Homework-002, Soru 3: ");
         System.out.print("enter a number for prime-factors: ");
@@ -18,7 +18,7 @@ public class Test {
         NumberUtil.printPrimeFactors(ival);
 
         System.out.println("Homework-002, Soru 4: ");
-        Draw.printBouncePattern(23, 7);
+        BallFall.play(23, 7);
 
         System.out.println("Homework-002, Soru 5: ");
         System.out.print("enter a number for GoldBach: ");

@@ -1,11 +1,11 @@
-public class Main
-{
-    public static void main(String[] args) {
-
+public class Main {
+    public static void main(String[] args)
+    {
         //Test.run();
-        long lval = NumberUtil.nextClosestFibonacci(23);
-        System.out.println(lval);
-
+        //TestDate.run();
+        //BallFall.play(7, 27);
+        Diamond.printDiamond(6);
+       // NumberUtil.printGoldBach(16);
     }
 
 }
