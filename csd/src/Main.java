@@ -3,9 +3,8 @@ public class Main {
     {
         //Test.run();
         //TestDate.run();
-        //BallFall.play(7, 27);
+        BallFall.play(7, 27);
         Diamond.printDiamond(6);
-       // NumberUtil.printGoldBach(16);
     }
 
 }
