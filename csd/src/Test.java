@@ -41,8 +41,6 @@ public class Test {
             }
         }
         System.out.println();
-        System.out.println("Homework-003, Soru 3: ");
-        System.out.printf("%d%n", NumberUtil.calculateDigitRoot(36987));
 
         System.out.println("Homework-003, Soru 4: ");
         for(int i = 0; i < 100001; ++i) {
